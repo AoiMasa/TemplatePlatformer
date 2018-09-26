@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerManager : MonoBehaviour {
+public class PlayerManager : MonoBehaviour
+{
 
     [Header("Movement Settings")]
     [SerializeField]
@@ -11,15 +12,18 @@ public class PlayerManager : MonoBehaviour {
     private float runSpeed = 10;
     [SerializeField]
     private float jumpSpeed = 500;
+    [HideInInspector]
+    public bool isGrounded;
 
     private Rigidbody2D rigidbodyComponent;
-    public bool isGrounded;
+    private Animator animator;
     private bool isTouchingWall;
 
     // Use this for initialization
-    void Start () {
-        //Fetch the Rigidbody component you attach from your GameObject
-        rigidbodyComponent = GetComponent<Rigidbody2D>();
+    void Start()
+    {
+        rigidbodyComponent = this.GetComponent<Rigidbody2D>();
+        animator = this.GetComponent<Animator>();
 
         isGrounded = true;
         isTouchingWall = false;
@@ -28,17 +32,41 @@ public class PlayerManager : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        animator.SetBool("IsGrounded", isGrounded);
+
+        float currentRunSpeed;
+        if (!Input.GetButton("Horizontal"))
+        {
+            currentRunSpeed = 0;
+        }
+        else currentRunSpeed = Input.GetAxis("Horizontal");
+
+        animator.SetFloat("CurrentRunSpeed", Mathf.Abs(currentRunSpeed));
+
+        ChangeFacingDirection();
 
     }
-
 
     //FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
     void FixedUpdate()
     {
         MovePlayer();
         JumpPlayer();
-      //  Debug.Log("x:" + rigidbodyComponent.velocity.x + "- y:" + rigidbodyComponent.velocity.y);
-        
+        //  Debug.Log("x:" + rigidbodyComponent.velocity.x + "- y:" + rigidbodyComponent.velocity.y);
+
+    }
+
+
+    private void ChangeFacingDirection()
+    {
+        if (Input.GetAxis("Horizontal") < -0.01f)
+        {
+            this.transform.localScale = new Vector3(-Mathf.Abs(this.transform.localScale.x), this.transform.localScale.y, this.transform.localScale.z);
+        }
+        else if (Input.GetAxis("Horizontal") > 0.01f)
+        {
+            this.transform.localScale = new Vector3(Mathf.Abs(this.transform.localScale.x), this.transform.localScale.y, this.transform.localScale.z);
+        }
     }
 
     private void MovePlayer()
@@ -82,7 +110,7 @@ public class PlayerManager : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Wall") 
+        if (collision.gameObject.tag == "Wall")
         {
             isTouchingWall = true;
         }

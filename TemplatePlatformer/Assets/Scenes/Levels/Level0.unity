@@ -152,6 +152,29 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1972307455868220, guid: 929ac5dc513fda0409a2c61eff4f2915, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1306810273793418, guid: 929ac5dc513fda0409a2c61eff4f2915, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 50318733319113688, guid: 929ac5dc513fda0409a2c61eff4f2915,
+        type: 2}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114585118896508768, guid: 929ac5dc513fda0409a2c61eff4f2915,
+        type: 2}
+      propertyPath: jumpSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114585118896508768, guid: 929ac5dc513fda0409a2c61eff4f2915,
+        type: 2}
+      propertyPath: lowJumpMultiplier
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 929ac5dc513fda0409a2c61eff4f2915, type: 2}
   m_IsPrefabAsset: 0
@@ -232,6 +255,72 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1968753500
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1968753502}
+  - component: {fileID: 1968753501}
+  - component: {fileID: 1968753503}
+  m_Layer: 0
+  m_Name: EndLevel
+  m_TagString: Finish
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &1968753501
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1968753500}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!4 &1968753502
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1968753500}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.62, y: -2.29, z: -0.00390625}
+  m_LocalScale: {x: 0.5375, y: 3.4609375, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1968753503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1968753500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d826628b201121f40b595017c5e00190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2034783934
 Prefab:
   m_ObjectHideFlags: 0
@@ -287,7 +376,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4356537586909644, guid: bc057621591c56747896f694d2445b42, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.92
+      value: -3.12
       objectReference: {fileID: 0}
     - target: {fileID: 4356537586909644, guid: bc057621591c56747896f694d2445b42, type: 2}
       propertyPath: m_LocalPosition.z
@@ -312,6 +401,10 @@ Prefab:
     - target: {fileID: 4356537586909644, guid: bc057621591c56747896f694d2445b42, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356537586909644, guid: bc057621591c56747896f694d2445b42, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.61625004
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc057621591c56747896f694d2445b42, type: 2}

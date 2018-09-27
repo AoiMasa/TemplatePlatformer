@@ -11,7 +11,11 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]
     private float runSpeed = 10;
     [SerializeField]
-    private float jumpSpeed = 500;
+    private float jumpSpeed = 10;
+    [SerializeField]
+    private float fallMultiplier = 2.5f;
+    [SerializeField]
+    private float lowJumpMultiplier = 3f;
     [HideInInspector]
     public bool isGrounded;
 
@@ -104,7 +108,18 @@ public class PlayerManager : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            rigidbodyComponent.AddForce(Vector2.up * jumpSpeed);
+            rigidbodyComponent.velocity = Vector2.up * jumpSpeed;
+          
+        }
+        //Add gravity when player is falling to have a better jump feeling
+        //https://www.youtube.com/watch?v=7KiK0Aqtmzc
+        if (rigidbodyComponent.velocity.y < 0)
+        {
+            rigidbodyComponent.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+        }
+        else if (rigidbodyComponent.velocity.y > 0 && !Input.GetButton("Jump")) //Add a low jump when just pressing the jump key 
+        {
+            rigidbodyComponent.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
     }
 

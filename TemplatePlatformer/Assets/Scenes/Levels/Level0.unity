@@ -152,29 +152,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1972307455868220, guid: 929ac5dc513fda0409a2c61eff4f2915, type: 2}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 1306810273793418, guid: 929ac5dc513fda0409a2c61eff4f2915, type: 2}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 50318733319113688, guid: 929ac5dc513fda0409a2c61eff4f2915,
-        type: 2}
-      propertyPath: m_GravityScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114585118896508768, guid: 929ac5dc513fda0409a2c61eff4f2915,
-        type: 2}
-      propertyPath: jumpSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114585118896508768, guid: 929ac5dc513fda0409a2c61eff4f2915,
-        type: 2}
-      propertyPath: lowJumpMultiplier
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 929ac5dc513fda0409a2c61eff4f2915, type: 2}
   m_IsPrefabAsset: 0
@@ -401,10 +378,6 @@ Prefab:
     - target: {fileID: 4356537586909644, guid: bc057621591c56747896f694d2445b42, type: 2}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4356537586909644, guid: bc057621591c56747896f694d2445b42, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.61625004
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc057621591c56747896f694d2445b42, type: 2}

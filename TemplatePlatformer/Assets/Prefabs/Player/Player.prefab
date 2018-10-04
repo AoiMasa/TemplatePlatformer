@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114469336296690204}
   m_Layer: 0
   m_Name: Feet
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 61818485230162932}
   m_Layer: 0
   m_Name: CollisionBox
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -216,7 +216,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxRunSpeed: 3
   runSpeed: 10
-  jumpSpeed: 500
+  jumpSpeed: 10
+  fallMultiplier: 2.5
+  lowJumpMultiplier: 5
   isGrounded: 0
 --- !u!212 &212353781265234972
 SpriteRenderer:
